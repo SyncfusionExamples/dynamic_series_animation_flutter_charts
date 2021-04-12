@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 void main() {
@@ -19,14 +18,14 @@ class _ChartApp extends StatelessWidget {
 
 class _MyHomePage extends StatefulWidget {
   // ignore: prefer_const_constructors_in_immutables
-  _MyHomePage({Key key}) : super(key: key);
+  _MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<_MyHomePage> {
-  ChartSeriesController _chartSeriesController;
+  ChartSeriesController? _chartSeriesController;
   final List<ChartSampleData> chartData = <ChartSampleData>[
     ChartSampleData(x: 'Jan', y: 45, secondSeriesYValue: 1000),
     ChartSampleData(x: 'Feb', y: 100, secondSeriesYValue: 3000),
@@ -48,7 +47,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               height: 50,
             ),
             Container(
-              height: 550,
+              height: 450,
               child: SfCartesianChart(
                 backgroundColor: Colors.white,
                 plotAreaBorderWidth: 0,
@@ -81,7 +80,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                     child: ButtonTheme(
                         minWidth: 40.0,
                         height: 30.0,
-                        child: RaisedButton(
+                        child: ElevatedButton(
                           onPressed: () {
                             _chartSeriesController?.animate();
                           },
@@ -99,7 +98,7 @@ class _MyHomePageState extends State<_MyHomePage> {
 class ChartSampleData {
   ChartSampleData({this.x, this.y, this.secondSeriesYValue});
 
-  final String x;
-  final double y;
-  final double secondSeriesYValue;
+  final String? x;
+  final double? y;
+  final double? secondSeriesYValue;
 }
