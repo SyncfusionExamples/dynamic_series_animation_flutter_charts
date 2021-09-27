@@ -26,7 +26,7 @@ class _MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<_MyHomePage> {
 
-  TooltipBehavior _tooltipBehavior;
+  late TooltipBehavior _tooltipBehavior;
   ChartSeriesController? _chartSeriesController;
   final List<ChartSampleData> chartData = <ChartSampleData>[
     ChartSampleData(x: 'Jan', y: 45, secondSeriesYValue: 1000),
