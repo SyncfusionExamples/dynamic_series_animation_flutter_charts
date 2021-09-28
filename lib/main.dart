@@ -25,6 +25,8 @@ class _MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<_MyHomePage> {
+
+  late TooltipBehavior _tooltipBehavior;
   ChartSeriesController? _chartSeriesController;
   final List<ChartSampleData> chartData = <ChartSampleData>[
     ChartSampleData(x: 'Jan', y: 45, secondSeriesYValue: 1000),
@@ -34,6 +36,12 @@ class _MyHomePageState extends State<_MyHomePage> {
     ChartSampleData(x: 'May', y: 85, secondSeriesYValue: 5000),
     ChartSampleData(x: 'June', y: 140, secondSeriesYValue: 7000)
   ];
+
+  void initState() {
+    _tooltipBehavior = TooltipBehavior(enable: true);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +78,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                       yValueMapper: (ChartSampleData sales, _) => sales.y,
                       name: 'Unit Sold'),
                 ],
-                tooltipBehavior: TooltipBehavior(enable: true),
+                tooltipBehavior: _tooltipBehavior,
               ),
             ),
             Row(
