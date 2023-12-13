@@ -67,7 +67,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                     interval: 25,
                     maximum: 150,
                     majorGridLines: MajorGridLines(width: 0)),
-                series: <ChartSeries<ChartSampleData, String>>[
+                series: <ColumnSeries<ChartSampleData, String>>[
                   ColumnSeries<ChartSampleData, String>(
                       animationDuration: 2000,
                       onRendererCreated: (ChartSeriesController controller) {
